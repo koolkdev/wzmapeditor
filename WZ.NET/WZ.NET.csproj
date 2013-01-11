@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98FD779A-DAB1-4031-9758-95D455750088}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WZ</RootNamespace>
+    <AssemblyName>WZ.NET</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Delete.cs" />
+    <Compile Include="Actions\Rebuild.cs" />
+    <Compile Include="Actions\Create.cs" />
+    <Compile Include="BitmapCachingService.cs" />
+    <Compile Include="CachedBitmap.cs" />
+    <Compile Include="Crc32.cs" />
+    <Compile Include="EntryList.cs" />
+    <Compile Include="Hashlist.cs" />
+    <Compile Include="IMGFile.cs" />
+    <Compile Include="Operation\Add.cs" />
+    <Compile Include="Operation\Copy.cs" />
+    <Compile Include="Operation\Run.cs" />
+    <Compile Include="WZDirectory.cs" />
+    <Compile Include="Objects\WZSound.cs" />
+    <Compile Include="Objects\WZUOL.cs" />
+    <Compile Include="Objects\WZVector.cs" />
+    <Compile Include="Objects\WZCanvas.cs" />
+    <Compile Include="Objects\WZConvex.cs" />
+    <Compile Include="Objects\WZProperty.cs" />
+    <Compile Include="Objects\WZComplex.cs" />
+    <Compile Include="Objects\WZDouble.cs" />
+    <Compile Include="Objects\WZEmpty.cs" />
+    <Compile Include="Objects\WZFloat.cs" />
+    <Compile Include="Objects\WZInteger.cs" />
+    <Compile Include="Objects\WZObjects.cs" />
+    <Compile Include="Objects\WZShort.cs" />
+    <Compile Include="Objects\WZSimpleObject.cs" />
+    <Compile Include="Objects\WZString.cs" />
+    <Compile Include="Objects\WZTypeObject.cs" />
+    <Compile Include="File.cs" />
+    <Compile Include="IMGEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WZFile.cs" />
+    <Compile Include="WZObject.cs" />
+    <Compile Include="WZPatch.cs" />
+    <Compile Include="WZPatchFile.cs" />
+    <Compile Include="WZPatchOperation.cs" />
+    <Compile Include="WZWriteable.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

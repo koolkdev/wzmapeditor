@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEditor", "MapEditor\MapEditor.csproj", "{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98FD779A-DAB1-4031-9758-95D455750088} = {98FD779A-DAB1-4031-9758-95D455750088}
+		{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A} = {DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SomeC++Stuffs", "SomeC++Stuffs\SomeC++Stuffs.vcxproj", "{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\zlib.vcxproj", "{3F5DB714-716D-45BC-9DA5-28D8540CEF64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WZ.NET", "WZ.NET\WZ.NET.csproj", "{98FD779A-DAB1-4031-9758-95D455750088}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}.Debug|Win32.Build.0 = Debug|Any CPU
+		{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}.Release|Win32.ActiveCfg = Release|Any CPU
+		{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}.Release|Win32.Build.0 = Release|Any CPU
+		{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}.Debug|Win32.ActiveCfg = Release|Win32
+		{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}.Debug|Win32.Build.0 = Release|Win32
+		{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}.Release|Win32.ActiveCfg = Release|Win32
+		{DD0D9ED5-71D3-4126-96D2-C3D9E5E4684A}.Release|Win32.Build.0 = Release|Win32
+		{3F5DB714-716D-45BC-9DA5-28D8540CEF64}.Debug|Win32.ActiveCfg = Release|Win32
+		{3F5DB714-716D-45BC-9DA5-28D8540CEF64}.Debug|Win32.Build.0 = Release|Win32
+		{3F5DB714-716D-45BC-9DA5-28D8540CEF64}.Release|Win32.ActiveCfg = Release|Win32
+		{3F5DB714-716D-45BC-9DA5-28D8540CEF64}.Release|Win32.Build.0 = Release|Win32
+		{98FD779A-DAB1-4031-9758-95D455750088}.Debug|Win32.ActiveCfg = Release|Any CPU
+		{98FD779A-DAB1-4031-9758-95D455750088}.Debug|Win32.Build.0 = Release|Any CPU
+		{98FD779A-DAB1-4031-9758-95D455750088}.Release|Win32.ActiveCfg = Release|Any CPU
+		{98FD779A-DAB1-4031-9758-95D455750088}.Release|Win32.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

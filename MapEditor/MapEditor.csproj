@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C3C666C-245A-4D83-A32B-C3ABD5BDF994}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapEditor</RootNamespace>
+    <AssemblyName>MapEditor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>icon64.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>947281A378EC3F34CDAC385A5860F8FD68DCEE0C</ManifestCertificateThumbprint>
+    <ManifestKeyFile>WZMapEditor_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <StartupObject>
+    </StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationVersion>1.3.5.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WZ.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WZ.NET\bin\Release\WZ.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\ActionAdd.cs" />
+    <Compile Include="Actions\ActionChangeLayer.cs" />
+    <Compile Include="Actions\ActionDelete.cs" />
+    <Compile Include="Actions\IAction.cs" />
+    <Compile Include="Actions\ActionMove.cs" />
+    <Compile Include="ICached.cs" />
+    <Compile Include="ColorsCaching.cs" />
+    <Compile Include="Controls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls.Designer.cs">
+      <DependentUpon>Controls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceEventArgs.cs" />
+    <Compile Include="DevicePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DevicePanel.Designer.cs">
+      <DependentUpon>DevicePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="GarbageCollector.cs" />
+    <Compile Include="GetToolTipInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetToolTipInfo.Designer.cs">
+      <DependentUpon>GetToolTipInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetMapInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetMapInfo.Designer.cs">
+      <DependentUpon>GetMapInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetLRType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetLRType.Designer.cs">
+      <DependentUpon>GetLRType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetPortalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetPortalInfo.Designer.cs">
+      <DependentUpon>GetPortalInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetReactorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetReactorInfo.Designer.cs">
+      <DependentUpon>GetReactorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetRespawnTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetRespawnTime.designer.cs">
+      <DependentUpon>GetRespawnTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetVersion.Designer.cs">
+      <DependentUpon>GetVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageViewer.designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportMap.Designer.cs">
+      <DependentUpon>ImportMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapBackFrame.cs" />
+    <Compile Include="MapBackground.cs" />
+    <Compile Include="MapBackgroundSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapBackgroundSelect.Designer.cs">
+      <DependentUpon>MapBackgroundSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapClock.cs" />
+    <Compile Include="MapCurve.cs" />
+    <Compile Include="MapleCharacter.cs" />
+    <Compile Include="MaplePyhsics.cs" />
+    <Compile Include="MapLRDesign.cs" />
+    <Compile Include="MapBack.cs" />
+    <Compile Include="MapEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapEditor.Designer.cs">
+      <DependentUpon>MapEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapFoothold.cs" />
+    <Compile Include="MapFootholdDesign.cs" />
+    <Compile Include="MapFootholds.cs" />
+    <Compile Include="MapFootholdSide.cs" />
+    <Compile Include="MapLayerObject.cs" />
+    <Compile Include="MapLife.cs" />
+    <Compile Include="MapLR.cs" />
+    <Compile Include="MapLRSide.cs" />
+    <Compile Include="MapMarkSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapMarkSelect.designer.cs">
+      <DependentUpon>MapMarkSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapMob.cs" />
+    <Compile Include="MapNPC.cs" />
+    <Compile Include="MapObjectFrame.cs" />
+    <Compile Include="MapPortal.cs" />
+    <Compile Include="MapReactor.cs" />
+    <Compile Include="MapSeat.cs" />
+    <Compile Include="MapSeatDesign.cs" />
+    <Compile Include="MapSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSelect.Designer.cs">
+      <DependentUpon>MapSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs" />
+    <Compile Include="MapLayer.cs" />
+    <Compile Include="MapItem.cs" />
+    <Compile Include="MapObject.cs" />
+    <Compile Include="MapTile.cs" />
+    <Compile Include="MapTileDesignPotential.cs" />
+    <Compile Include="MapTileDesign.cs" />
+    <Compile Include="MapTileSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapTileSelect.Designer.cs">
+      <DependentUpon>MapTileSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapToolTip.cs" />
+    <Compile Include="MapToolTipCorner.cs" />
+    <Compile Include="NewMapWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMapWizard.Designer.cs">
+      <DependentUpon>NewMapWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PatcherCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatcherCreator.Designer.cs">
+      <DependentUpon>PatcherCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GetLRType.resx">
+      <DependentUpon>GetLRType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetPortalInfo.resx">
+      <DependentUpon>GetPortalInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetReactorInfo.resx">
+      <DependentUpon>GetReactorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetRespawnTime.resx">
+      <DependentUpon>GetRespawnTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetVersion.resx">
+      <DependentUpon>GetVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageViewer.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportMap.resx">
+      <DependentUpon>ImportMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapBackgroundSelect.resx">
+      <DependentUpon>MapBackgroundSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEditor.resx">
+      <DependentUpon>MapEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapMarkSelect.resx">
+      <DependentUpon>MapMarkSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSelect.resx">
+      <DependentUpon>MapSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapTileSelect.resx">
+      <DependentUpon>MapTileSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapWizard.resx">
+      <DependentUpon>NewMapWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResourceExtractor.cs" />
+    <Compile Include="ScrollPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Simulator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulator.Designer.cs">
+      <DependentUpon>Simulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThumbnailController.cs" />
+    <Compile Include="ThumbnailFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TilesDesign\bsc.cs" />
+    <Compile Include="TilesDesign\edD.cs" />
+    <Compile Include="TilesDesign\edU.cs" />
+    <Compile Include="TilesDesign\enH0.cs" />
+    <Compile Include="TilesDesign\enH1.cs" />
+    <Compile Include="TilesDesign\enV0.cs" />
+    <Compile Include="TilesDesign\enV1.cs" />
+    <Compile Include="TilesDesign\slLD.cs" />
+    <Compile Include="TilesDesign\slLU.cs" />
+    <Compile Include="TilesDesign\slRD.cs" />
+    <Compile Include="TilesDesign\slRU.cs" />
+    <Compile Include="ToolStripNumberControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="icon64.ico" />
+    <EmbeddedResource Include="PatcherCreator.resx">
+      <DependentUpon>PatcherCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulator.resx">
+      <DependentUpon>Simulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Release\SomeC++Stuffs.dll" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls.resx">
+      <DependentUpon>Controls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetToolTipInfo.resx">
+      <DependentUpon>GetToolTipInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetMapInfo.resx">
+      <DependentUpon>GetMapInfo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
